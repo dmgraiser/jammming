@@ -91,9 +91,7 @@ class App extends React.Component {
   }
 
   removeTrack(track) {
-    const newPlaylist = this.state.playlistTracks;
-    const i = newPlaylist.indexOf(track);
-    newPlaylist.splice(i, 1);
+    const newPlaylist = this.state.playlistTracks.filter(savedTrack => savedTrack.id !== track.id);
     this.setState({
       playlistTracks: newPlaylist
     });
