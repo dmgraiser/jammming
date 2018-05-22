@@ -1,53 +1,23 @@
 import React from 'react';
-import '../Track/Track.css';
-import Track from '../Track/Track.js';
 import './SearchResults.css';
-
-const searchResultsTracks = [
-  {
-    track_title: "Tiny Dancer",
-    artist: "Elton John",
-    album: "Madman Across The Water"
-  },
-  {
-    track_title: "Tiny Dancer",
-    artist: "Tim McGraw",
-    album: "Love Story"
-  },
-  {
-    track_title: "Tiny Dancer",
-    artist: "Rockabye Baby!",
-    album: "Lullaby Renditions of Elton John"
-  },
-  {
-    track_title: "Tiny Dancer",
-    artist: "The White Raven",
-    album: "Tiny Dancer"
-  },
-  {
-    track_title: "Tiny Dancer",
-    artist: "Ben Folds",
-    album: "Ben Folds Live"
-  },
-  {
-    track_title: "Dammit",
-    artist: "Blink 182",
-    album: "Dude Ranch"
-  }
-];
+import TrackList from '../TrackList/TrackList.js';
 
 class SearchResults extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addToPlaylist = this.addToPlaylist.bind(this);
+  }
+
+  addToPlaylist() {
+
+  }
+
   render() {
     return (
-      <div class="SearchResults">
+      <div className="SearchResults">
         <h2>Results</h2>
-        <div class="TrackList">
-          {
-            searchResultsTracks.map(function(track) {
-              return <Track track={track}/>
-            })
-          }
-        </div>
+        <TrackList tracks={this.props.searchResults} onAdd={this.props.onAdd} isRemoval={false} />
+
       </div>
     )
   };
