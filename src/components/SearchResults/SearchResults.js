@@ -3,15 +3,6 @@ import './SearchResults.css';
 import TrackList from '../TrackList/TrackList.js';
 
 class SearchResults extends React.Component {
-  constructor(props) {
-    super(props);
-    this.addToPlaylist = this.addToPlaylist.bind(this);
-  }
-
-  addToPlaylist() {
-
-  }
-
   render() {
     return (
       <div className="SearchResults">
