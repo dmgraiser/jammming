@@ -16,36 +16,7 @@ class App extends React.Component {
     this.state = {
       searchResults: [],
       playlistName: "My Playlist",
-      playlistTracks: [
-        {
-          name: "Stronger",
-          artist: "Britney Spears",
-          album: "Oops!... I Did It Again",
-          id: 7,
-          uri: 7
-        },
-        {
-          name: "So Emotional",
-          artist: "Whitney Houston",
-          album: "Whitney",
-          id: 8,
-          uri: 8
-        },
-        {
-          name: "It's Not Right But It's Okay",
-          artist: "Whitney Houston",
-          album: "My Love Is Your Love",
-          id: 9,
-          uri: 9
-        },
-        {
-          name: "Ironic",
-          artist: "Alanis Morrisette",
-          album: "Jagged Little Pill",
-          id: 10,
-          uri: 10
-        }
-      ]
+      playlistTracks: []
     };
   }
 
@@ -75,9 +46,11 @@ class App extends React.Component {
   }
 
   savePlaylist() {
-    const trackURIs = this.state.playlistTracks.map(track => function() {
-      return track.uri;
-    });
+    const trackURIs = this.state.playlistTracks.map(track => track.uri);
+    console.log(trackURIs);
+    Spotify.savePlaylist(this.state.playlistName, trackURIs);
+    this.setState({playlistName: 'New Playlist',
+                   playlistTracks: []});
   }
 
   async search(searchTerm) {
