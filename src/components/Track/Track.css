@@ -4,6 +4,17 @@
   border-bottom: 1px solid rgba(256, 256, 256, 0.8);
 }
 
+.Play-button {
+  background: url("./playButton.png");
+  background-size: 60px;
+  background-position: 0px;
+  background-repeat: no-repeat;
+  width: 65px;
+  height: 65px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
 .Track-action {
   cursor: pointer;
   padding: .5rem;

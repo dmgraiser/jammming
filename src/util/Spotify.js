@@ -1,5 +1,5 @@
 const clientID = '0bf60d2689a94b6c9d5cb9ab2520d7d7';
-const redirectURI = 'https://dmgraiser.surge.sh';
+const redirectURI = 'http://localhost:3001/';
 let accessToken = '';
 
 let Spotify = {
